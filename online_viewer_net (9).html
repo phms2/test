@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SBC Events Sponsorship: Multi-Event Overview</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .chart-container { position: relative; width: 100%; max-width: 450px; margin: auto; height: 350px; max-height: 450px; }
+        @media (min-width: 768px) { .chart-container { height: 400px; } }
+        .main-tab-btn.active { border-color: #005F73; background-color: #005F73; color: white; }
+        .sub-tab-btn.active { background-color: #E9D8A6; color: #005F73; font-weight: 600; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+    <div class="container mx-auto p-4 md:p-8">
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-[#005F73]">SBC Events Sponsorships</h1>
+            <p class="text-lg text-slate-600 mt-2">Detailed Overview for Rio, Americas & Lisbon Summits</p>
+        </header>
+
+        <main>
+            <!-- Main Tabs -->
+            <div class="mb-6">
+                <nav class="flex justify-center space-x-2 rounded-lg bg-slate-200 p-1" aria-label="Tabs">
+                    <button data-target="rio" class="main-tab-btn active w-1/3 px-3 py-2 font-medium text-slate-700 rounded-md transition-colors duration-200">Rio</button>
+                    <button data-target="americas" class="main-tab-btn w-1/3 px-3 py-2 font-medium text-slate-700 rounded-md transition-colors duration-200">Americas</button>
+                    <button data-target="lisbon" class="main-tab-btn w-1/3 px-3 py-2 font-medium text-slate-700 rounded-md transition-colors duration-200">Lisbon</button>
+                </nav>
+            </div>
+
+            <!-- Content Area -->
+            <div id="main-content-area">
+                <!-- RIO CONTENT -->
+                <div id="rio-content" class="main-tab-content">
+                    <div class="flex justify-center mb-6"><div class="flex p-1 bg-slate-200 rounded-lg"><button data-main="rio" data-year="2025" class="sub-tab-btn active px-4 py-1.5 text-sm rounded-md">2025</button><button data-main="rio" data-year="2026" class="sub-tab-btn px-4 py-1.5 text-sm rounded-md">2026</button></div></div>
+                    <div id="rio-2025-content" class="sub-tab-content">
+                        <section class="grid grid-cols-1 lg:grid-cols-5 gap-8">
+                            <div class="lg:col-span-3 bg-white p-6 rounded-lg shadow-md"><h2 class="text-2xl font-bold mb-4 text-[#005F73]">Rio 2025: Cost Breakdown</h2><div class="chart-container"><canvas id="chart-rio-2025"></canvas></div></div>
+                            <div class="lg:col-span-2 space-y-4">
+                                <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-[#EE9B00]"><h3 class="text-xl font-bold text-slate-700 mb-2">Financial Summary</h3><div class="flex justify-between items-baseline"><span class="text-slate-500">Total Value (excl. VAT):</span><span class="text-xl font-bold text-[#005F73]">€20,000.00</span></div><div class="flex justify-between items-baseline mt-2"><span class="text-slate-500">Status:</span><span class="font-semibold text-amber-600 bg-amber-100 px-3 py-1 rounded-full">Unpaid</span></div></div>
+                                <div class="bg-white p-4 rounded-lg shadow-md flex items-center"><div class="text-4xl mr-4">👥</div><div><h4 class="font-bold text-slate-700">Meeting Room</h4><p class="text-lg font-semibold text-[#005F73]">€18,461.54 <span class="text-sm text-slate-500">(was €30,000)</span></p></div></div>
+                                <div class="bg-white p-4 rounded-lg shadow-md flex items-center"><div class="text-4xl mr-4">📱</div><div><h4 class="font-bold text-slate-700">SBC Global Social Media Post</h4><p class="text-lg font-semibold text-[#005F73]">€1,538.46 <span class="text-sm text-slate-500">(was €2,500)</span></p></div></div>
+                            </div>
+                        </section>
+                    </div>
+                    <div id="rio-2026-content" class="sub-tab-content hidden"><div class="text-center p-10 bg-white rounded-lg shadow-md"><h3 class="text-xl font-semibold text-slate-600">No sponsorship agreement found for SBC Summit Rio 2026.</h3></div></div>
+                </div>
+
+                <!-- AMERICAS CONTENT -->
+                <div id="americas-content" class="main-tab-content hidden">
+                    <div class="flex justify-center mb-6"><div class="flex p-1 bg-slate-200 rounded-lg"><button data-main="americas" data-year="2025" class="sub-tab-btn active px-4 py-1.5 text-sm rounded-md">2025</button><button data-main="americas" data-year="2026" class="sub-tab-btn px-4 py-1.5 text-sm rounded-md">2026</button></div></div>
+                    <div id="americas-2025-content" class="sub-tab-content">
+                         <section class="grid grid-cols-1 lg:grid-cols-5 gap-8">
+                            <div class="lg:col-span-3 bg-white p-6 rounded-lg shadow-md"><h2 class="text-2xl font-bold mb-4 text-[#005F73]">Americas 2025: Cost Breakdown</h2><div class="chart-container"><canvas id="chart-americas-2025"></canvas></div></div>
+                            <div class="lg:col-span-2 space-y-4">
+                                <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-[#EE9B00]"><h3 class="text-xl font-bold text-slate-700 mb-2">Financial Summary</h3><div class="flex justify-between items-baseline"><span class="text-slate-500">Total Value (excl. VAT):</span><span class="text-xl font-bold text-[#005F73]">€30,000.00</span></div><div class="flex justify-between items-baseline mt-2"><span class="text-slate-500">Status:</span><span class="font-semibold text-amber-600 bg-amber-100 px-3 py-1 rounded-full">Unpaid</span></div></div>
+                                <div class="bg-white p-4 rounded-lg shadow-md flex items-center"><div class="text-4xl mr-4">👥</div><div><h4 class="font-bold text-slate-700">Meeting Room</h4><p class="text-lg font-semibold text-[#005F73]">€28,235.29 <span class="text-sm text-slate-500">(was €40,000)</span></p></div></div>
+                                <div class="bg-white p-4 rounded-lg shadow-md flex items-center"><div class="text-4xl mr-4">📱</div><div><h4 class="font-bold text-slate-700">SBC Global Social Media Post</h4><p class="text-lg font-semibold text-[#005F73]">€1,764.71 <span class="text-sm text-slate-500">(was €2,500)</span></p></div></div>
+                            </div>
+                        </section>
+                    </div>
+                    <div id="americas-2026-content" class="sub-tab-content hidden"><div class="text-center p-10 bg-white rounded-lg shadow-md"><h3 class="text-xl font-semibold text-slate-600">No sponsorship agreement found for SBC Summit Americas 2026.</h3></div></div>
+                </div>
+
+                <!-- LISBON CONTENT -->
+                <div id="lisbon-content" class="main-tab-content hidden">
+                    <div class="flex justify-center mb-6"><div class="flex p-1 bg-slate-200 rounded-lg"><button data-main="lisbon" data-year="2025" class="sub-tab-btn active px-4 py-1.5 text-sm rounded-md">2025</button><button data-main="lisbon" data-year="2026" class="sub-tab-btn px-4 py-1.5 text-sm rounded-md">2026</button></div></div>
+                    <div id="lisbon-2025-content" class="sub-tab-content">
+                        <section class="grid grid-cols-1 lg:grid-cols-5 gap-8">
+                            <div class="lg:col-span-3 bg-white p-6 rounded-lg shadow-md"><h2 class="text-2xl font-bold mb-4 text-[#005F73]">Lisbon 2025: Cost Breakdown</h2><div class="chart-container"><canvas id="chart-lisbon-2025"></canvas></div></div>
+                            <div class="lg:col-span-2 space-y-4">
+                                <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-green-500"><h3 class="text-xl font-bold text-slate-700 mb-2">Financial Summary</h3><div class="flex justify-between items-baseline"><span class="text-slate-500">Total Value (incl. VAT):</span><span class="text-xl font-bold text-[#005F73]">€150,875.98</span></div><div class="flex justify-between items-baseline mt-2"><span class="text-slate-500">Status:</span><span class="font-semibold text-green-600 bg-green-100 px-3 py-1 rounded-full">Fully Paid</span></div></div>
+                                <div class="bg-white p-4 rounded-lg shadow-md flex items-center"><div class="text-4xl mr-4">👥</div><div><h4 class="font-bold text-slate-700">2 x Meeting Rooms</h4><p class="text-lg font-semibold text-[#005F73]">€54,739.57</p></div></div>
+                                <div class="bg-white p-4 rounded-lg shadow-md flex items-center"><div class="text-4xl mr-4">🏟️</div><div><h4 class="font-bold text-slate-700">Main Stage Sponsor</h4><p class="text-lg font-semibold text-[#005F73]">€58,649.54</p></div></div>
+                                <div class="bg-white p-4 rounded-lg shadow-md flex items-center"><div class="text-4xl mr-4">📰</div><div><h4 class="font-bold text-slate-700">Magazine Advert</h4><p class="text-lg font-semibold text-[#005F73]">€2,736.98</p></div></div>
+                                <div class="bg-white p-4 rounded-lg shadow-md flex items-center"><div class="text-4xl mr-4">📧</div><div><h4 class="font-bold text-slate-700">Newsletter Takeover</h4><p class="text-lg font-semibold text-[#005F73]">€9,383.93</p></div></div>
+                                <div class="bg-white p-4 rounded-lg shadow-md flex items-center"><div class="text-4xl mr-4">✍️</div><div><h4 class="font-bold text-slate-700">Featured Article</h4><p class="text-lg font-semibold text-[#005F73]">€2,345.98</p></div></div>
+                            </div>
+                        </section>
+                    </div>
+                    <div id="lisbon-2026-content" class="sub-tab-content hidden">
+                        <section class="grid grid-cols-1 lg:grid-cols-5 gap-8">
+                            <div class="lg:col-span-3 bg-white p-6 rounded-lg shadow-md"><h2 class="text-2xl font-bold mb-4 text-[#005F73]">Lisbon 2026: Cost Breakdown</h2><div class="chart-container"><canvas id="chart-lisbon-2026"></canvas></div></div>
+                             <div class="lg:col-span-2 space-y-4">
+                                <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-[#EE9B00]"><h3 class="text-xl font-bold text-slate-700 mb-2">Financial Summary</h3><div class="flex justify-between items-baseline"><span class="text-slate-500">Total Value (incl. VAT):</span><span class="text-xl font-bold text-[#005F73]">€158,419.72</span></div><div class="flex justify-between items-baseline mt-2"><span class="text-slate-500">Paid:</span><span class="font-semibold text-[#0A9396]">€15,841.50</span></div><div class="flex justify-between items-baseline mt-1"><span class="text-slate-500">Outstanding:</span><span class="font-semibold text-[#CA6702]">€142,578.22</span></div></div>
+                                <div class="bg-white p-4 rounded-lg shadow-md flex items-center"><div class="text-4xl mr-4">👥</div><div><h4 class="font-bold text-slate-700">2 x Meeting Rooms</h4><p class="text-lg font-semibold text-[#005F73]">€57,478.78</p></div></div>
+                                <div class="bg-white p-4 rounded-lg shadow-md flex items-center"><div class="text-4xl mr-4">🏟️</div><div><h4 class="font-bold text-slate-700">Main Stage Sponsor</h4><p class="text-lg font-semibold text-[#005F73]">€61,584.40</p></div></div>
+                                <div class="bg-white p-4 rounded-lg shadow-md flex items-center"><div class="text-4xl mr-4">📰</div><div><h4 class="font-bold text-slate-700">Magazine Advert</h4><p class="text-lg font-semibold text-[#005F73]">€2,873.94</p></div></div>
+                                <div class="bg-white p-4 rounded-lg shadow-md flex items-center"><div class="text-4xl mr-4">📧</div><div><h4 class="font-bold text-slate-700">Newsletter Takeover</h4><p class="text-lg font-semibold text-[#005F73]">€9,853.50</p></div></div>
+                                <div class="bg-white p-4 rounded-lg shadow-md flex items-center"><div class="text-4xl mr-4">✍️</div><div><h4 class="font-bold text-slate-700">Featured Article</h4><p class="text-lg font-semibold text-[#005F73]">€2,463.38</p></div></div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        const brilliantBluesPalette = {
+            primaryDark: '#005F73', primary: '#0A9396', secondary: '#94D2BD',
+            accentLight: '#E9D8A6', accent: '#EE9B00', accentDark: '#CA6702',
+        };
+        const costColors = [brilliantBluesPalette.primary, brilliantBluesPalette.secondary, brilliantBluesPalette.accentLight, brilliantBluesPalette.accent, brilliantBluesPalette.primaryDark];
+        const chartInstances = {};
+
+        const mainTabs = document.querySelectorAll('.main-tab-btn');
+        const mainContents = document.querySelectorAll('.main-tab-content');
+        const subTabs = document.querySelectorAll('.sub-tab-btn');
+        const subContents = document.querySelectorAll('.sub-tab-content');
+
+        const handleTabClick = (tabs, contents, activeClass) => {
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    tabs.forEach(item => item.classList.remove(activeClass));
+                    tab.classList.add(activeClass);
+                    const targetId = tab.dataset.target;
+                    contents.forEach(content => {
+                        content.classList.toggle('hidden', content.id !== `${targetId}-content`);
+                    });
+                });
+            });
+        };
+
+        const handleSubTabClick = () => {
+            subTabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    document.querySelectorAll(`.sub-tab-btn[data-main="${tab.dataset.main}"]`).forEach(item => item.classList.remove('active'));
+                    tab.classList.add('active');
+                    document.querySelectorAll(`#${tab.dataset.main}-content .sub-tab-content`).forEach(content => {
+                         content.classList.toggle('hidden', content.id !== `${tab.dataset.main}-${tab.dataset.year}-content`);
+                    });
+                });
+            });
+        };
+        
+        mainTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                mainTabs.forEach(item => item.classList.remove('active'));
+                tab.classList.add('active');
+                mainContents.forEach(content => {
+                    content.classList.toggle('hidden', content.id !== `${tab.dataset.target}-content`);
+                });
+            });
+        });
+        handleSubTabClick();
+
+        const commonTooltipOptions = {
+            callbacks: {
+                title: (tooltipItems) => tooltipItems[0].label,
+                label: (context) => {
+                    let label = context.dataset.label || '';
+                    if (label) { label += ': '; }
+                    if (context.parsed !== null) { label += new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(context.parsed); }
+                    return label;
+                }
+            }
+        };
+
+        const createDoughnutChart = (canvasId, labels, data) => {
+            if (chartInstances[canvasId]) { chartInstances[canvasId].destroy(); }
+            const ctx = document.getElementById(canvasId).getContext('2d');
+            chartInstances[canvasId] = new Chart(ctx, {
+                type: 'doughnut',
+                data: { labels, datasets: [{ label: 'Cost', data, backgroundColor: costColors, borderColor: '#FFFFFF', borderWidth: 4 }] },
+                options: { responsive: true, maintainAspectRatio: false, cutout: '60%', plugins: { legend: { position: 'bottom', labels: { font: { size: 12 } } }, tooltip: { ...commonTooltipOptions } } }
+            });
+        };
+        
+        createDoughnutChart('chart-rio-2025', ['Meeting Room', 'Social Media Post'], [18461.54, 1538.46]);
+        createDoughnutChart('chart-americas-2025', ['Meeting Room', 'Social Media Post'], [28235.29, 1764.71]);
+        const lisbonLabels = ['Meeting Rooms', 'Main Stage Sponsor', 'Magazine Advert', 'Newsletter Takeover', 'Featured Article'];
+        createDoughnutChart('chart-lisbon-2025', lisbonLabels, [54739.57, 58649.54, 2736.98, 9383.93, 2345.98]);
+        createDoughnutChart('chart-lisbon-2026', lisbonLabels, [57478.78, 61584.40, 2873.94, 9853.50, 2463.38]);
+
+    </script>
+</body>
+</html>
